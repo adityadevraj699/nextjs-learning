@@ -19,18 +19,18 @@ export default function Header() {
   };
 
   return (
-    <div className="navbar bg-base-300 sticky top-0 z-40">
+    <div className="navbar bg-white dark:bg-gray-900 sticky top-0 z-40 border-b border-gray-200 dark:border-gray-700">
       <div className="container mx-auto">
         <div className="flex-1 px-2 lg:flex-none">
           <Link
             href="/"
-            className="btn btn-ghost text-xl gap-2 normal-case font-bold"
+            className="btn btn-ghost text-xl gap-2 normal-case font-bold text-black dark:text-white"
             prefetch={true}
             onClick={() =>
               showNotification("Welcome to ImageKit ReelsPro", "info")
             }
           >
-            <Home className="w-5 h-5" />
+            <Home className="w-5 h-5 text-sky-500" />
             ReelsPro
           </Link>
         </div>
@@ -42,15 +42,15 @@ export default function Header() {
                 role="button"
                 className="btn btn-ghost btn-circle"
               >
-                <User className="w-5 h-5" />
+                <User className="w-5 h-5 text-gray-700 dark:text-white" />
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] shadow-lg bg-base-100 rounded-box w-64 mt-4 py-2"
+                className="dropdown-content z-[1] shadow-lg bg-white dark:bg-gray-800 rounded-box w-64 mt-4 py-2 border border-gray-200 dark:border-gray-700"
               >
                 {session ? (
                   <>
-                    <li className="px-4 py-1">
+                    <li className="px-4 py-1 text-gray-900 dark:text-gray-200">
                       <span className="text-sm opacity-70">
                         {session.user?.email?.split("@")[0]}
                       </span>
@@ -60,7 +60,7 @@ export default function Header() {
                     <li>
                       <Link
                         href="/upload"
-                        className="px-4 py-2 hover:bg-base-200 block w-full text-white"
+                        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 block w-full text-black dark:text-white"
                         onClick={() =>
                           showNotification("Welcome to Admin Dashboard", "info")
                         }
@@ -72,7 +72,7 @@ export default function Header() {
                     <li>
                       <button
                         onClick={handleSignOut}
-                        className="px-4 py-2 text-error hover:bg-base-200 w-full text-left"
+                        className="px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left"
                       >
                         Sign Out
                       </button>
@@ -82,7 +82,7 @@ export default function Header() {
                   <li>
                     <Link
                       href="/login"
-                      className="px-4 py-2 hover:bg-base-200 block w-full"
+                      className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 block w-full text-black dark:text-white"
                       onClick={() =>
                         showNotification("Please sign in to continue", "info")
                       }

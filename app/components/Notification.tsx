@@ -8,9 +8,7 @@ interface NotificationContextType {
   showNotification: (message: string, type: NotificationType) => void;
 }
 
-const NotificationContext = createContext<NotificationContextType | undefined>(
-  undefined
-);
+const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
 
 export function NotificationProvider({ children }: { children: ReactNode }) {
   const [notification, setNotification] = useState<{
@@ -44,24 +42,22 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
 function getAlertClass(type: NotificationType): string {
   switch (type) {
     case "success":
-      return "alert-success";
+      return "alert-success bg-sky-500 text-white";
     case "error":
-      return "alert-error";
+      return "alert-error bg-red-500 text-white";
     case "warning":
-      return "alert-warning";
+      return "alert-warning bg-yellow-500 text-black";
     case "info":
-      return "alert-info";
+      return "alert-info bg-sky-400 text-white";
     default:
-      return "alert-info";
+      return "alert-info bg-sky-400 text-white";
   }
 }
 
 export function useNotification() {
   const context = useContext(NotificationContext);
   if (context === undefined) {
-    throw new Error(
-      "useNotification must be used within a NotificationProvider"
-    );
+    throw new Error("useNotification must be used within a NotificationProvider");
   }
   return context;
 }

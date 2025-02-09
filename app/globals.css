@@ -22,17 +22,17 @@ textarea {
 
 /* Scrollbar customization for dark theme */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  @apply bg-sky-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full;
+  @apply bg-sky-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-600;
+  @apply bg-sky-600;
 }

@@ -44,11 +44,16 @@ export default function Register() {
   };
 
   return (
-    <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Register</h1>
+    <div className="max-w-md mx-auto bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+      <h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+        Register
+      </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="email" className="block mb-1">
+          <label
+            htmlFor="email"
+            className="block mb-1 text-black dark:text-white"
+          >
             Email
           </label>
           <input
@@ -57,11 +62,14 @@ export default function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:border-sky-500 focus:ring-sky-500"
           />
         </div>
         <div>
-          <label htmlFor="password" className="block mb-1">
+          <label
+            htmlFor="password"
+            className="block mb-1 text-black dark:text-white"
+          >
             Password
           </label>
           <input
@@ -70,11 +78,14 @@ export default function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:border-sky-500 focus:ring-sky-500"
           />
         </div>
         <div>
-          <label htmlFor="confirmPassword" className="block mb-1">
+          <label
+            htmlFor="confirmPassword"
+            className="block mb-1 text-black dark:text-white"
+          >
             Confirm Password
           </label>
           <input
@@ -83,18 +94,21 @@ export default function Register() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            className="w-full px-3 py-2 border rounded"
+            className="w-full px-3 py-2 border border-gray-300 rounded focus:border-sky-500 focus:ring-sky-500"
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          className="w-full bg-sky-500 text-white py-2 rounded hover:bg-sky-600 transition-all"
         >
           Register
         </button>
-        <p className="text-center mt-4">
+        <p className="text-center mt-4 text-black dark:text-white">
           Already have an account?{" "}
-          <Link href="/login" className="text-blue-500 hover:text-blue-600">
+          <Link
+            href="/login"
+            className="text-red-500 hover:text-red-600 transition-all"
+          >
             Login
           </Link>
         </p>

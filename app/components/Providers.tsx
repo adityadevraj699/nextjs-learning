@@ -27,7 +27,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           urlEndpoint={urlEndpoint}
           authenticator={authenticator}
         >
-          {children}
+          <div className="min-h-screen bg-white dark:bg-gray-900">
+            {children}
+          </div>
         </ImageKitProvider>
       </NotificationProvider>
     </SessionProvider>

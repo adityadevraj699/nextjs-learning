@@ -16,6 +16,7 @@ if (!cached) {
 
 export async function connectToDatabase() {
   if (cached.conn) {
+    console.log("=> using existing database connection");
     return cached.conn;
   }
 
@@ -28,10 +29,12 @@ export async function connectToDatabase() {
     cached.promise = mongoose
       .connect(MONGODB_URI, opts)
       .then(() => mongoose.connection);
+      console.log("connection established");
   }
 
   try {
     cached.conn = await cached.promise;
+    console.log("Connection Succesfully")
   } catch (e) {
     cached.promise = null;
     throw e;

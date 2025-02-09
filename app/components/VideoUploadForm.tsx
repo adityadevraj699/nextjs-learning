@@ -72,9 +72,9 @@ export default function VideoUploadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
       <div className="form-control">
-        <label className="label">Title</label>
+        <label className="label text-black dark:text-white">Title</label>
         <input
           type="text"
           className={`input input-bordered ${
@@ -83,14 +83,12 @@ export default function VideoUploadForm() {
           {...register("title", { required: "Title is required" })}
         />
         {errors.title && (
-          <span className="text-error text-sm mt-1">
-            {errors.title.message}
-          </span>
+          <span className="text-error text-sm mt-1">{errors.title.message}</span>
         )}
       </div>
 
       <div className="form-control">
-        <label className="label">Description</label>
+        <label className="label text-black dark:text-white">Description</label>
         <textarea
           className={`textarea textarea-bordered h-24 ${
             errors.description ? "textarea-error" : ""
@@ -105,7 +103,7 @@ export default function VideoUploadForm() {
       </div>
 
       <div className="form-control">
-        <label className="label">Upload Video</label>
+        <label className="label text-black dark:text-white">Upload Video</label>
         <FileUpload
           fileType="video"
           onSuccess={handleUploadSuccess}
@@ -114,7 +112,7 @@ export default function VideoUploadForm() {
         {uploadProgress > 0 && (
           <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
             <div
-              className="bg-primary h-2.5 rounded-full transition-all duration-300"
+              className="bg-sky-500 h-2.5 rounded-full transition-all duration-300"
               style={{ width: `${uploadProgress}%` }}
             />
           </div>
@@ -123,7 +121,7 @@ export default function VideoUploadForm() {
 
       <button
         type="submit"
-        className="btn btn-primary btn-block"
+        className="btn btn-primary btn-block bg-sky-500 text-white hover:bg-sky-600"
         disabled={loading || !uploadProgress}
       >
         {loading ? (
